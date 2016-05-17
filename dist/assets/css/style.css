@@ -1,3 +1,4 @@
+/* Colors */
 .clear:before, .clear:after {
   content: ' ';
   display: table; }
@@ -13,17 +14,19 @@
   text-rendering: optimizeLegibility; }
 
 html {
-  font-size: 62.5%;
-  background: radial-gradient(ellipse at center, #F7F6F0 0, #c2ba8c 80%, #b0a66b 100%); }
+  font-size: 62.5%; }
 
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
+  font: 300 13px/1.6 'Roboto', sans-serif;
   color: #444;
-  transition: all .4s .3s ease-in; }
+  transition: all .4s .3s ease-in;
+  background-color: rgba(255, 242, 198, 0);
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 body, html {
-  min-height: 100vh;
-  overflow: hidden; }
+  min-height: 100%;
+  overflow: auto; }
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -397,8 +400,45 @@ textarea {
   top: 50%;
   left: 50%; }
 
-.nav ul {
-  list-style: none; }
+.navbar-default {
+  background-color: #fff;
+  border-radius: 0;
+  border: 0; }
+  .navbar-default ul {
+    list-style: none; }
+
+@media only screen and (min-width: 1024px) {
+  .navbar-default {
+    position: absolute;
+    width: 285px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 0; }
+    .navbar-default ul {
+      list-style: none; } }
+
+.main-container {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent; }
+  .main-container > .container {
+    background-color: #fff;
+    min-height: 100vh;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 0 1px rgba(150, 150, 150, 0.1);
+    padding-left: 285px; }
+
+@media only screen and (max-width: 1023px) {
+  .main-container > .container {
+    padding: 0px; } }
 
 @font-face {
   font-family: 'Font-Name';
@@ -406,6 +446,10 @@ textarea {
   src: url("../fonts/font-name.eot?#iefix") format("embedded-opentype"), url("../fonts/font-name.woff") format("woff"), url("../fonts/font-name.ttf") format("truetype"), url("../fonts/font-name.svg#font-name") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+h1 {
+  font-size: 4rem;
+  font-weight: 100; }
 
 ::-moz-selection {
   background: #333;

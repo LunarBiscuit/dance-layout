@@ -8,9 +8,13 @@ html {
 
 }
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
+  font: 300 13px/1.6 'Roboto', sans-serif;
   color: #444;
   transition: all .4s .3s ease-in;
+
+  background-color: rgba(255, 242, 198, 0);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 body,html{
 	min-height: 100%;

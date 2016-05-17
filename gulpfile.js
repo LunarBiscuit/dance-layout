@@ -61,6 +61,7 @@ gulp.task('bower', function()
     // TODO concat all the bower components into a single css and js file then push them across and inject after
     return gulp.src(mainBowerFiles())
       .pipe(gulp.dest('dist/assets/components'));
+
 });
 
 gulp.task('inject', function()
@@ -73,7 +74,8 @@ gulp.task('inject', function()
 		.pipe(wiredep({
       directory: 'dist/assets/bower_components'
 		}))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({stream:true})); 
 
 });
 
@@ -117,5 +119,5 @@ gulp.task('bs-reload', function () {
 gulp.task('default', ['css', 'js', 'build-html', 'browser-sync'], function () {
     gulp.watch('src/scss/*/*.scss', ['css']);
     gulp.watch('src/js/*.js', ['js']);
-    gulp.watch('dist/*.html', ['bs-reload']);
+    gulp.watch('src/pages/**/*.handlebars', ['build-html']);
 });
